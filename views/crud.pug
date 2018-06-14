@@ -1,0 +1,51 @@
+extends layout.pug
+block head
+    link(rel="stylesheet" href="../stylesheets/contact.css")
+block midNavBar
+    ul.right
+        li
+            a(href="/admin/report" data-target="slide-out" class="sidenav-trigger white-text show-on-large button-collapse")
+               | Reportes
+            
+block content
+    .main-container
+      .form-container
+        h1 Contact Form
+        .form
+            input#name(type="text" placeholder="Nombre" required="")
+            input#Apellidos(type="text" placeholder="Apellidos" required="")
+            input#phone(type="number" placeholder="Teléfono" required="")
+            input#NReferencia(type="text" placeholder="Número de referenicia" required="")
+            input#FechaN(type="date" required="")
+            input#LugarN(type="text" placeholder="Lugar de nacimiento" required="")
+            .element-radio#sex
+                label.title Sexo
+                .column.column1
+                    label
+                        input(type="radio" name="radio" value="Femenino")
+                        span Femenino
+                    label
+                        input(type="radio" name="radio" value="Masculino")
+                        span Masculino
+            input#Curp(type="text" placeholder="curp" required="")
+            input#Dir(type="text" placeholder="Direccion" required="")
+            input#correo(type="text" placeholder="Email" required="")
+            input#EscuelaP(type="text" placeholder="Escuela procedencia" required="")
+            input#promedio(type="text" placeholder="Promedio" required="")
+            input#CalfEx(type="text" placeholder="Calificación Examen" required="")
+            input#btnSave(type="button" value="Save")
+    .table-container
+      table#table1
+        thead#table-head
+          tr
+            th S.N.
+            th Nombre
+            th Apellidos
+            th numeroDeReferencia
+            th Aciertos
+            th Edit
+            th Delete
+
+block script
+    script(src="../javascripts/DynamicTable.js")
+    script(src="../javascripts/smoothscroll.js")

@@ -1,0 +1,43 @@
+extends layout.pug
+
+block content
+    if messages.error
+        .alert.alert-danger
+            div= messages.error
+    if messages.info
+        .alert.alert-info
+            div= messages.info
+    if messages.success
+        .alert.alert-success
+            div= messages.success
+    br
+    main
+      center
+        h5.SecundaryText.text-lighten-2 Please, login into your account
+        .container
+          .z-depth-1.lighten-4.row.NavBarWP.log_in
+            form.col.s12(method="post" action="/admin" id="submit")
+              .row
+                .col.s12
+              .row
+                .input-field.col.s12
+                  // i class="material-icons prefix">textsms</i
+                  input#autocomplete-input.autocomplete.white-text(type="text" name="gamer")
+                  label(for="autocomplete-input") Enter your user
+              .row
+                .input-field.col.s12
+                  input#password.black-text(type="password" name="password")
+                  label(for="password") Enter your password
+                label(style="float: right;")
+                  //a.SecundaryText(href="/forgot")
+                    b Forgot Password?
+                .input-field.col.s12
+              br
+              center
+                .row
+                  button.col.s12.btn.btn-large.waves-effect.waves-light.blue.darken-4(type="submit" name="btn_login") Login
+        //a(href="/register") Create account
+    br
+    
+block script
+    //script(src="../javascripts/home/initHome.js")

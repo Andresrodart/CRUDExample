@@ -1,0 +1,45 @@
+doctype html  
+html(lang='en')  
+    head
+        title= title     
+        meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        //CSS
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+        link(href="../stylesheets/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection")
+        link(href='../stylesheets/style.css', rel='stylesheet')
+        block head
+    body
+        nav(class= 'blue darken-3' role="navigation")
+            div(class="nav-wrapper container")
+                block midNavBar
+            
+        div(id="index-banner" class="section")
+            .row.container
+                .col.s12.m10.offset-m1
+                    block content
+        
+        block postBanner
+
+
+        footer(class="page-footer blue darken-3")
+            div(class="container")
+                div(class="row")
+                    div(class="col l6 s12")
+                        h5(class="white-text") Company Bio
+                    div(class="col l3 s12")
+                        h5(class="white-text") Settings
+                    div(class="col l3 s12")
+                        h5(class="white-text") Connect
+    
+            div(class="footer-copyright")
+                .container
+                    | Made by 
+                    a.brown-text.text-lighten-3(href='') Andres Rodart
+
+        block scriptPre
+        
+        script(src='../javascripts/jquery-3.3.1.min.js')
+        script(src='../javascripts/materialize.min.js')
+
+        block script

@@ -1,0 +1,33 @@
+{
+  "name": "proyecto",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "brfs": "^1.6.1",
+    "compression": "^1.7.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.2.0",
+    "helmet": "^3.12.1",
+    "http-errors": "~1.6.2",
+    "mathjs": "^4.4.1",
+    "mongodb": "^3.1.0-beta4",
+    "mongoose": "^5.0.17",
+    "morgan": "^1.9.0",
+    "npm": "^6.1.0",
+    "pdfkit": "^0.8.3",
+    "pdfmake": "^0.1.36",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "nodemon": "^1.17.5"
+  }
+}

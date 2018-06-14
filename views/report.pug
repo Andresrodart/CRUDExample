@@ -1,0 +1,20 @@
+extends layout.pug
+block head
+    link(rel="stylesheet" href="../stylesheets/contact.css")
+    script(src="https://cdn.plot.ly/plotly-latest.min.js")
+block midNavBar
+    ul.right
+        li
+            a(href="/admin/CRUD" data-target="slide-out" class="sidenav-trigger white-text show-on-large button-collapse")
+               | Editar estudainte
+block content
+    .section
+        .conteiner.center
+            a.waves-effect.waves-light.btn#Aciertos Núm aciertos
+            a.waves-effect.waves-light.btn#Escuelas Por escuela
+            a.waves-effect.waves-light.btn#Residencias lugarDeNacieminto
+            a.waves-effect.waves-light.btn#EdadSexo Edad y sexo
+        .myDiv#myDiv
+        .myDiv2#myDiv2
+block script
+    script(src="../javascripts/Reports.js")

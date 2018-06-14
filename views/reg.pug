@@ -1,0 +1,165 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Registro
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body.blurBg-false(style='background-color:#EBEBEB')
+    .container
+    if messages.error
+        .alert.alert-danger
+            div= messages.error
+    if messages.info
+        .alert.alert-info
+            div= messages.info
+    if messages.success
+        .alert.alert-success
+            div= messages.succes
+    // Start Formoid form
+    link(rel='stylesheet', href='../stylesheets/formoid-solid-blue.css', type='text/css')
+    script(type='text/javascript', src='../javascripts/jquery-3.3.1.min.js')
+    form.formoid-solid-blue(style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px", method='post', action='/reg')
+      .title
+        h2 Registro
+      .element-input
+        label.title
+        .item-cont
+          input.large(type='text', name='input', placeholder='Número de referencia')
+          span.icon-place
+      .element-name
+        label.title
+        span.nameFirst
+          input(placeholder=' Nombre', type='text', size='8', name='name')
+          span.icon-place
+        span.nameLast
+          input(placeholder=' Apellidos', type='text', size='14', name='last')
+          span.icon-place
+      .element-date
+        label.title
+        .item-cont
+          input.large(data-format='yyyy-mm-dd', type='date', name='date', placeholder='Fecha de nacimiento')
+          span.icon-place
+      .element-separator
+        hr
+        h3.section-break-title Lugar de nacimiento
+      .element-select
+        label.title
+        .item-cont
+          .large
+            span
+              select(name='select1')
+                option(value='Aguascalientes') Aguascalientes
+                option(value='Baja California') Baja California
+                option(value='Baja California Sur') Baja California Sur
+                option(value='Campeche') Campeche
+                option(value='Chiapas') Chiapas
+                option(value='Chihuahua') Chihuahua
+                option(value='Coahuila') Coahuila
+                option(value='Colima') Colima
+                option(value='Ciudad de México') Ciudad de México
+                option(value='Durango') Durango
+                option(value='Guanajuato') Guanajuato
+                option(value='Guerrero') Guerrero
+                option(value='Hidalgo') Hidalgo
+                option(value='Jalisco') Jalisco
+                option(value='México') México
+                option(value='Michoacán') Michoacán
+                option(value='Morelos') Morelos
+                option(value='Nayarit') Nayarit
+                option(value='Nuevo León') Nuevo León
+                option(value='Oaxaca') Oaxaca
+                option(value='Puebla') Puebla
+                option(value='Querétaro') Querétaro
+                option(value='Quintana Roo') Quintana Roo
+                option(value='San Luis Potosí') San Luis Potosí
+                option(value='Sinaloa') Sinaloa
+                option(value='Sonora') Sonora
+                option(value='Tabasco') Tabasco
+                option(value='Tamaulipas') Tamaulipas
+                option(value='Tlaxcala') Tlaxcala
+                option(value='Veracruz') Veracruz
+                option(value='Yucatán') Yucatán
+                option(value='Zacatecas') Zacatecas
+              i
+              span.icon-place
+      .element-radio
+        label.title Sexo
+        .column.column1
+          label
+            input(type='radio', name='radio', value='Femenino')
+            span Femenino
+          label
+            input(type='radio', name='radio', value='Masculino')
+            span Masculino
+        span.clearfix
+      .element-input
+        label.title
+        .item-cont
+          input.large(type='text', name='input1', placeholder='Curp')
+          span.icon-place
+      .element-input
+        label.title
+        .item-cont
+          input.large(type='text', name='input2', placeholder='Dirección')
+          span.icon-place
+      .element-phone
+        label.title
+        .item-cont
+          input.large(type='tel', pattern='[+]?[\.\s\-\(\)\*\#0-9]{3,}', maxlength='24', name='phone', placeholder='Teléfono o celular', value='')
+          span.icon-place
+      .element-email
+        label.title
+        .item-cont
+          input.large(type='email', name='email', value='', placeholder='Correo electrónico')
+          span.icon-place
+      .element-separator
+        hr
+        h3.section-break-title Escuela de procedencia
+      .element-select
+        label.title
+        .item-cont
+          .large
+            span
+              select(name='select')
+                option(value='Cecyt 1') Cecyt 1
+                option(value='Cecyt 2') Cecyt 2
+                option(value='Cecyt 3') Cecyt 3
+                option(value='Cecyt 4') Cecyt 4
+                option(value='Cecyt 5') Cecyt 5
+                option(value='Cecyt 6') Cecyt 6
+                option(value='Cecyt 7') Cecyt 7
+                option(value='Cecyt 8') Cecyt 8
+                option(value='Cecyt 9') Cecyt 9
+                option(value='CET') CET
+                option(value='Otros') Otros
+              i
+              span.icon-place
+      .element-number
+        label.title
+        .item-cont
+          input.large(type='text', min='0', max='10', name='number', placeholder='Promedio', value='')
+          span.icon-place
+      .element-radio
+        label.title ¿Qué opción fue ESCOM en tus preferencias?
+        .column.column1
+          label
+            input(type='radio', name='radio1', value='Opción uno')
+            span Opción uno
+          label
+            input(type='radio', name='radio1', value='Opción dos')
+            span Opción dos
+          label
+            input(type='radio', name='radio1', value='Opción tres')
+            span Opción tres
+        span.clearfix
+      .element-file
+        label.title
+        .item-cont
+          label.large
+            .button Cargar
+            input.file_input(type='file', name='file')
+            .file_text Fotografia
+            span.icon-place
+      .submit
+        input(type='submit', value='Enviar')
+    // Stop Formoid form
