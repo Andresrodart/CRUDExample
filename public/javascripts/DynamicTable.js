@@ -56,8 +56,11 @@
         
                     btnDelete.onclick = (function() {
                         return function() {
-                            if (confirm("Are you sure you want to delete?")) {
+                            if (confirm("Are you sure you want to delete "+ userData[this.getAttribute('id')].numeroDeReferencia +"?")) {
                                 var deleteId = this.getAttribute('id');
+                                $.post('/admin/CRUD',  {'delete':userData[deleteId].numeroDeReferencia}, function( data ) {
+                                    updateTable();
+                                });
                                 userData.splice(deleteId, 1);
                                 updateTable();
                                 refreshForm();

@@ -110,9 +110,12 @@ exports.estudiante_make_post = function(req, res, next){
             if (err) console.log(err);
             else res.send(tank);
           });
+    }else if(req.body.delete){
+        Estudiante.deleteOne({ numeroDeReferencia: req.body.delete }, function (err) {
+            if (err) return handleError(err);
+          });
     }
     else{
-        console.log(req.body);
         Estudiante.find().exec(function (err, results) {
             res.send(results);
         });
